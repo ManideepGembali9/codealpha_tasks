@@ -17,8 +17,8 @@ This is a responsive image gallery website built using HTML, CSS, and JavaScript
 image-gallery/
 │── index.html
 │── style.css
-│── script.js
-│── images/
+│── gallery.js
+│── data.js
 
  ▶️ How to Use
 1. Open the website in your browser
