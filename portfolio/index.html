@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclipse | Creative Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <div class="container nav-container">
+        <div class="logo" id="logoDisplay">✦ Eclipse</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-btns">
+            <div class="icon-circle" id="themeToggle"><i class="fas fa-moon"></i></div>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge" id="creativeTagline">✨ vision crafter</span>
+                <h1 class="hero-name" id="displayName">Manideep Gembali</h1>
+                <h3 class="hero-title" id="displayTitle">Computer Science Engineering Student</h3>
+                <p class="hero-desc" id="displayBio">First-year engineering student at LPU, passionate about web dev, Python, and creative coding. Building future-ready experiences.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Contact</a>
+                    <button id="resumeDownloadBtn" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Download Resume</button>
+                </div>
+            </div>
+            <div class="hero-avatar">
+                <div class="avatar-frame">
+                    <img id="avatarImg" src="https://ui-avatars.com/api/?background=8b5cf6&color=fff&rounded=true&bold=true&size=120&name=MD" alt="avatar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-card">
+                <p id="displayAbout">I am a passionate Computer Science Engineering student with a strong foundation in Python, HTML, and CSS. Focused on expanding skills in full-stack development and solving real-world problems through elegant interfaces. Constantly exploring new tech and open-source.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tech Arsenal</h2>
+            </div>
+            <div id="skillsListContainer" class="skills-grid"></div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education & Qualifications</h2>
+                <p class="section-sub">My academic journey</p>
+            </div>
+            <div id="educationContainer" class="education-grid"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Work</h2>
+            </div>
+            <div id="projectsContainer" class="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Let’s Connect</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-details">
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i> <span id="contactPhone">+91 9392569961</span></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> <span id="contactEmail">manideepgembali9@gmail.com</span></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span id="contactLocation">Parvathipuram, Andhra Pradesh</span></div>
+                    <div class="contact-item"><i class="fab fa-github"></i> <span id="contactGithub">github.com/ManideepGembali9</span></div>
+                    <div class="contact-item"><i class="fab fa-linkedin"></i> <span id="contactLinkedin">linkedin.com/in/manideep-gembali</span></div>
+                    <div class="contact-item"><i class="fas fa-file-pdf"></i> <span id="resumeLinkDisplay">Resume ready (click button above)</span></div>
+                </div>
+                <div class="edit-note">
+                    <i class="fas fa-cog"></i> <strong>Customize everything</strong><br>
+                    <span>Click the gear icon (bottom right) to edit name, bio, skills, education, projects, resume link, and more.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© <span id="footerYear">2026</span> • Manideep Portfolio • <i class="fas fa-magic"></i> live editor</p>
+</footer>
+
+<!-- Floating Settings Button -->
+<button class="settings-fab" id="settingsFab"><i class="fas fa-sliders-h"></i></button>
+
+<!-- Edit Modal -->
+<div id="editModal" class="modal-overlay">
+    <div class="modal-container">
+        <span class="close-modal" id="closeModalBtn">&times;</span>
+        <h3><i class="fas fa-edit"></i> Portfolio Editor</h3>
+        <form id="editorForm">
+            <div class="form-group"><label>Creative Tagline</label><input type="text" id="editTagline" placeholder="e.g., vision crafter, pixel alchemist"></div>
+            <div class="form-group"><label>Full Name</label><input type="text" id="editName"></div>
+            <div class="form-group"><label>Title / Role</label><input type="text" id="editTitle"></div>
+            <div class="form-group"><label>Short Bio</label><textarea id="editBio" rows="2"></textarea></div>
+            <div class="form-group"><label>About Paragraph</label><textarea id="editAbout" rows="3"></textarea></div>
+            <div class="form-group"><label>Skills (comma separated)</label><input type="text" id="editSkills"></div>
+            <div class="form-group">
+                <label>Education (JSON array)</label>
+                <textarea id="editEducation" rows="4" placeholder='[{"degree":"SSC","institution":"School Name","year":"2022","score":"84%"}]'></textarea>
+                <small>Each item: degree, institution, year, score</small>
+            </div>
+            <div class="form-group">
+                <label>Projects (JSON array)</label>
+                <textarea id="editProjects" rows="3" placeholder='[{"title":"Project","desc":"Description"}]'></textarea>
+            </div>
+            <div class="form-group">
+                <label>Contact & Resume</label>
+                <input type="text" id="editPhone" placeholder="Phone">
+                <input type="email" id="editEmail" placeholder="Email">
+                <input type="text" id="editLocation" placeholder="Location">
+                <input type="text" id="editGithub" placeholder="GitHub">
+                <input type="text" id="editLinkedin" placeholder="LinkedIn">
+                <input type="text" id="editResumeUrl" placeholder="Resume PDF URL (leave empty for auto-generated)">
+            </div>
+            <div class="form-group"><label>Avatar Image URL</label><input type="text" id="editAvatarUrl"></div>
+            <div class="form-group"><label>Footer Year / Logo</label><input type="text" id="editFooterYear"><input type="text" id="editLogoText" placeholder="Logo text" style="margin-top:6px;"></div>
+            <button type="button" id="saveSettingsBtn" class="btn-save"><i class="fas fa-save"></i> Save Changes</button>
+            <button type="button" id="resetDefaultBtn" class="btn-reset">Reset to Default</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
